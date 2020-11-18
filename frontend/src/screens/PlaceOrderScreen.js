@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -7,7 +7,7 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../actions/orderActions'
 
 const PlaceOrderScreen = ({ history }) => {
-  const dispath = useDispatch()
+  const dispatch = useDispatch()
 
   const cart = useSelector(state => state.cart)
 
@@ -37,7 +37,7 @@ const PlaceOrderScreen = ({ history }) => {
 
   const placeOrderHandler = e => {
     e.preventDefault()
-    dispath(
+    dispatch(
       createOrder({
         orderItems: cart.cartItems,
         shippingAddress: cart.shippingAddress,
