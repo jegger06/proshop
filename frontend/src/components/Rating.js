@@ -45,7 +45,7 @@ const Rating = ({ value, text, color }) => {
           className={
             value >= 4
               ? 'fas fa-star'
-              : value >= 4.5
+              : value >= 3.5
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
@@ -75,7 +75,7 @@ Rating.defaultProps = {
 
 Rating.propTypes = {
   value: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   color: PropTypes.string,
 }
 
